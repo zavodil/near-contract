@@ -17,11 +17,14 @@ wget https://github.com/zavodil/near-contract/archive/refs/heads/main.zip -O "ne
 
 BUILD DOCKER ON M1:
 ===
-Run docker buildx `contract-builder`
+Prepare docker
 ```
- ~/projects/near-sdk-rs/contract-builder/build_m1.sh
- ~/projects/near-sdk-rs/contract-builder/run_m1.sh
- 
+ clone https://github.com/near/near-sdk-rs/pull/720/files
+ ./build_docker_m1.sh
+```
+
+Run docker buildx `contract-builder`
+``` 
  ./build_docker_m1.sh
 ```
 

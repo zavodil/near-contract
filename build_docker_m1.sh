@@ -14,7 +14,7 @@ docker create \
      --mount type=bind,source=$DIR/..,target=/host \
      --cap-add=SYS_PTRACE --security-opt seccomp=unconfined \
      --name=$NAME \
-     -w /host/staking-pool-nft \
+     -w /host/contract \
      -e RUSTFLAGS='-C link-arg=-s' \
      -it \
      contract-builder \
