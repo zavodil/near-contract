@@ -1,9 +1,8 @@
 use near_sdk::{
-	log, env, near_bindgen, Balance, AccountId, BorshStorageKey, PanicOnDefault, Promise,
+	near_bindgen, AccountId, BorshStorageKey, PanicOnDefault,
 	borsh::{self, BorshDeserialize, BorshSerialize},
 	collections::{UnorderedMap},
-	json_types::{U128},
-   serde::{Deserialize, Serialize}
+    serde::{Deserialize, Serialize}
 };
 
 mod utils;

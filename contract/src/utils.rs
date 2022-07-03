@@ -1,5 +1,4 @@
 use crate::*;
-pub(crate) type TokenId = AccountId;
 
 pub(crate) fn unordered_map_pagination<K, VV, V>(
    m: &UnorderedMap<K, VV>,
