@@ -59,11 +59,11 @@ contract.prototype.call = async function (method, params, options) {
         throw new Error ("Account_id was not provided for CALL request")
     }
 
-    options.attached_gas = options.gas || config.GAS;
+    options.attached_gas = options.attached_gas || options.gas || config.GAS;
     if(options.hasOwnProperty("deposit_near")){
         options.attached_tokens = utils.ConvertToNear(options.deposit_near);
     } else {
-        options.attached_tokens = options.deposit || 0;
+        options.attached_tokens = options.attached_tokens || options.deposit || 0;
     }
     options.private_key = options.private_key || await utils.getPrivateKey(options.account_id);
     options.log_errors = typeof (options.log_errors) ? options.log_errors : true;
