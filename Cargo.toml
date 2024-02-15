@@ -10,21 +10,19 @@ path = "contract/src/lib.rs"
 crate-type = ["cdylib"]
 
 [dependencies]
-near-sdk = "=4.0.0"
+near-sdk = "5.0.0-alpha.2"
+near-contract-standards = "5.0.0-alpha.2"
+serde_json = { version = "1.0", features = ["preserve_order"] }
 uint = { version = "=0.9.0", default-features = false }
 
 [dev-dependencies]
-anyhow = "1.0"
-borsh = "0.9"
-maplit = "1.0"
-near-units = "0.1.0"
-serde = "1.0"
-serde_with = "1"
-serde_json = { version = "1.0", features = ["arbitrary_precision"] }
+insta = { version = "1.31.0", features = ["json", "redactions"] }
+regex = "1"
+near-workspaces = { version = "0.9.0", features = ["unstable"], default-features = false  }
 tokio = { version = "1.10.0", features = ["full"] }
-tracing = "0.1"
-tracing-subscriber = { version = "0.3.5", features = ["env-filter"] }
-workspaces = "0.3.1"
+serde_json = { version = "1.0", features = ["arbitrary_precision"] }
+near-units = "0.2.0"
+anyhow = "1.0"
 
 [[example]]
 name = "main"

@@ -6,14 +6,12 @@
 		"build": "npm run build:contract && npm run build:web",
 		"build:contract": "node contract/compile.js",
 		"build:contract:debug": "node contract/compile.js --debug",
-		"dev:deploy:contract": "near dev-deploy",
 		"deploy:contract": "near deploy",
 		"build:contract:testnet": "export NODE_ENV=testnet && node contract/compile.js",
 		"deploy:contract:testnet": "export NODE_ENV=testnet && near deploy",
-		"dev:clear": "rm -r neardev",
 		"test:workspace": "cargo run --example main -- --nocapture",
-		"test": "export NODE_ENV=testnet && export CONTRACT_NAME=dev-1640966965154-54263632565336 && jest rest-api.test.js --useStderr --verbose false",
-		"test:create_event": "export NODE_ENV=testnet && export CONTRACT_NAME=dev-1640966965154-54263632565336 && jest rest-api.test.js -t 'Create Event' --useStderr --verbose false"
+		"test": "cross-env NODE_ENV=testnet && jest rest-api.test.js --useStderr --verbose false",
+		"test:create_event": "cross-env NODE_ENV=testnet && jest rest-api.test.js -t 'Create Event' --useStderr --verbose false",
 	},
 	"devDependencies": {
 		"@babel/core": "~7.12.3",

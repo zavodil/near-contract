@@ -1,11 +1,13 @@
 use crate::*;
 
 #[derive(BorshSerialize, BorshDeserialize)]
+#[borsh(crate = "near_sdk::borsh")]
 pub enum VObject {
    Current(Object),
 }
 
 #[derive(BorshSerialize, BorshDeserialize)]
+#[borsh(crate = "near_sdk::borsh")]
 pub struct Object {
    pub account_id: AccountId,
 }
@@ -20,6 +22,7 @@ impl From<VObject> for Object {
 
 #[derive(BorshSerialize, BorshDeserialize, Serialize, Deserialize)]
 #[serde(crate = "near_sdk::serde")]
+#[borsh(crate = "near_sdk::borsh")]
 pub struct ObjectOutput {
    pub account_id: AccountId,
 }

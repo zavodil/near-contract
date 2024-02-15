@@ -1,6 +1,6 @@
 use near_sdk::{
 	near_bindgen, AccountId, BorshStorageKey, PanicOnDefault,
-	borsh::{self, BorshDeserialize, BorshSerialize},
+	borsh::{BorshDeserialize, BorshSerialize},
 	collections::{UnorderedMap},
     serde::{Deserialize, Serialize}
 };
@@ -12,12 +12,14 @@ use crate::utils::*;
 use crate::object::*;
 
 #[derive(BorshSerialize, BorshStorageKey)]
+#[borsh(crate = "near_sdk::borsh")]
 enum StorageKey {
 		Name
 }
 
 #[near_bindgen]
 #[derive(BorshDeserialize, BorshSerialize, PanicOnDefault)]
+#[borsh(crate = "near_sdk::borsh")]
 pub struct Contract {
 	owner_id: AccountId,
 	object: UnorderedMap<u64, VObject>
