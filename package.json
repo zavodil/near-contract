@@ -11,7 +11,7 @@
 		"deploy:contract:testnet": "export NODE_ENV=testnet && near deploy",
 		"test:workspace": "cargo run --example main -- --nocapture",
 		"test": "cross-env NODE_ENV=testnet && jest rest-api.test.js --useStderr --verbose false",
-		"test:create_event": "cross-env NODE_ENV=testnet && jest rest-api.test.js -t 'Create Event' --useStderr --verbose false",
+		"test:create_event": "cross-env NODE_ENV=testnet && jest rest-api.test.js -t 'Create Event' --useStderr --verbose false"
 	},
 	"devDependencies": {
 		"@babel/core": "~7.12.3",

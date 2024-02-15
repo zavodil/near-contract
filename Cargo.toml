@@ -24,7 +24,7 @@ serde_json = { version = "1.0", features = ["arbitrary_precision"] }
 near-units = "0.2.0"
 anyhow = "1.0"
 
-[[example]]
+[[test]]
 name = "main"
 path = "contract/tests/workspaces/main.rs"
 
